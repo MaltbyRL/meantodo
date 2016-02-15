@@ -1,26 +1,25 @@
 extends layout
 
 block content
-  h1= title
+  h1= todoApp
   p Welcome to The todoApp
   
-  form(action='/album', method='post', enctype='multipart/form-data' style='font-size: 1.9vw;')
-    input(type="text") task 
-    input(type="date") Date
-    input(type="checkbox") completed
-    button(style="background-color: brown; color: orange;" ) Submit
+    form(action='/album', method='post', enctype='multipart/form-data' style='font-size: 1.9vw;')
+      input(type="text" placeholder="task") 
+      input(type="date")
+      button(style="background-color: brown; color: orange;" ) Submit
+      
     
-  
-  <ui-view></ui-view>
-  table
-    thead
-      tr(ng-repeat="header, value in list[0] track by $index")
-        td {{header}}
-    tbody
-      tr(ng-repeat="item in list track by $index")
-       td {{task}}
-       td {{dueby}}
-       td {{completed}}
+    <ui-view></ui-view>
+    table
+      thead
+        tr(ng-repeat="header, value in list[0] track by $index")
+          td {{header}}
+      tbody
+        tr(ng-repeat="item in list track by $index")
+         td {{task}}
+         td {{dueby}}
+         td {{completed}}
        
        
        
