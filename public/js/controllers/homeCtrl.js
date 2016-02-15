@@ -8,6 +8,11 @@ app.controller('homeCtrl', function($scope, $http) {
     task: $scope.task,
     dueby: $scope.dueby
   }
+  function sendTodo(){
+    console.log($scope.this)
+    // console.log($scope.)
+    // console.log($scope.)
+}
 
   $http.post("/", function(req, res) {
     if (err) console.log(err)
@@ -15,7 +20,7 @@ app.controller('homeCtrl', function($scope, $http) {
     console.log(".post res:", res);
 
   });
-  
+
 
   $http.get("/")
     .then(function(data) {

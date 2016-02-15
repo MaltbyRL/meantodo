@@ -4,23 +4,29 @@ block content
   h1= todoApp
   p Welcome to The todoApp
   
-    form(action='/', method='post', enctype='multipart/form-data' style='font-size: 1.9vw;')
-      input(type="text" placeholder="task" class="task") 
-      input(type="date" class='date')
-      button(style="background-color: brown; color: orange;" ) Submit
+    form
+  .form-group
+    label(for='task') Task
+    input#task.form-control(type='task', placeholder='task')
+  .form-group
+    label(for='date')
+    input#date.form-control(type='date', placeholder='Password')
+  button.btn.btn-default(ng-click='seendTodo()') Register
+
+        
       
     
-    <ui-view></ui-view>
+    //- <ui-view></ui-view>
     table
-      thead
-        tr(ng-repeat="header, value in list[0] track by $index")
+      thead.tableheaders
+        tr(ng-repeat="(header, value) in list[0] track by $index")
           td 
             {{header.task}}
           td 
             {{header.dueby}}
           td 
             {{header.completed}}
-      tbody
+      tbody.tabledatas
         tr(ng-repeat="item in list track by $index")
          td 
            {{task}}
@@ -29,7 +35,8 @@ block content
          td 
            {{completed}}
          td 
-           button.delete(ng-click="sendTodo()")
+           button(style="background-color: red; color: black;") del
+             
        
        
        

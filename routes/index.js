@@ -8,15 +8,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
-function sendTodo(){
-  console.log()
-  console.log()
-  console.log()
-
   router.post('/', function(req, res) {
     console.log('req.body', req.body)
-
-
     // Todo(req.body, function(err, userData) {
     //   if(err) return res.status(400).send("err",err);
     //   var task = req.body.task
@@ -29,7 +22,6 @@ function sendTodo(){
         res.send();
     //   });
     // });
-  }
 });
 
 
