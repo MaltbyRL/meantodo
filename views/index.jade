@@ -5,8 +5,8 @@ block content
   p Welcome to The todoApp
   
     form(action='/', method='post', enctype='multipart/form-data' style='font-size: 1.9vw;')
-      input(type="text" placeholder="task") 
-      input(type="date")
+      input(type="text" placeholder="task" class="task") 
+      input(type="date" class='date')
       button(style="background-color: brown; color: orange;" ) Submit
       
     
@@ -14,12 +14,22 @@ block content
     table
       thead
         tr(ng-repeat="header, value in list[0] track by $index")
-          td {{header}}
+          td 
+            {{header.task}}
+          td 
+            {{header.dueby}}
+          td 
+            {{header.completed}}
       tbody
         tr(ng-repeat="item in list track by $index")
-         td {{task}}
-         td {{dueby}}
-         td {{completed}}
+         td 
+           {{task}}
+         td 
+           {{dueby}}
+         td 
+           {{completed}}
+         td 
+           button.delete(ng-click="sendTodo()")
        
        
        

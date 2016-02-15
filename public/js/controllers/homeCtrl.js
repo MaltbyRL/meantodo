@@ -9,9 +9,15 @@ app.controller('homeCtrl', function($scope, $http) {
     dueby: $scope.dueby
   }
 
-  console.log('homeCtrl')
+  $http.post("/", function(req, res) {
+    if (err) console.log(err)
 
-  $http.get("/users")
+    console.log(".post res:", res);
+
+  });
+  
+
+  $http.get("/")
     .then(function(data) {
       console.log("data:", data)
       $scope.todo = data.data
@@ -20,11 +26,5 @@ app.controller('homeCtrl', function($scope, $http) {
 
 
     });
-  $http.post("users", function(req, res) {
-    if (err) console.log(err)
-
-    console.log(".post res:", res);
-
-  });
 
 });
