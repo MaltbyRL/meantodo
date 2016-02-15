@@ -4,15 +4,21 @@ block content
   h1= title
   p Welcome to The todoApp
   
-  
+  form(action='/album', method='post', enctype='multipart/form-data' style='font-size: 1.9vw;')
+    input(type="text") task 
+    input(type="date") Date
+    input(type="checkbox") completed
+    button(style="background-color: brown; color: orange;" ) Submit
+    
   
   
   table
     thead
-      tr
+      tr(ng-repeat)
         td
     tbody
       tr
        td {{task}}
        td {{dueby}}
        td {{completed}}
+       

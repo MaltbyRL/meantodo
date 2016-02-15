@@ -10,17 +10,6 @@ var todoSchema = new mongoose.Schema({
   completed: Boolean
 });
 
-// instance method
-userSchema.methods = function() {
-  var payload = {
-    task = this.task
-    dueby = this.dueby
-    completed = this.completed
-  };
-
-
-return payload
-};
 
 
 
