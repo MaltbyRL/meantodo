@@ -3,11 +3,11 @@ var router = express.Router();
 
 Todo = require('../models/todomodel')
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res) {
   console.log('req.body', req.body)
   ref.createTodo(req.body, function(err, userData) {
     if(err) return res.status(400).send("err",err);

@@ -14,9 +14,16 @@ router.post('/', function(req, res, next) {
     var completed = req.body.completed
     console.log("task", task)
     console.log("Routes/req", req.body);
- Todo.create({task: task, dueby: dueby, completed: completed}, function(err, newtodo) {
+ Todo.create({
+	 task: task,
+	 dueby: dueby,
+	 completed: completed
+ }, function(err, newtodo) {
    if(err) return res.status(400).send(err);
       res.send();
     });
   });
 });
+
+
+module.exports = router;
