@@ -3,7 +3,7 @@ Todo = require('../models/todomodel')
 
 
 
-router.post('/newTodo', function(req, res, next) {
+router.post('/', function(req, res, next) {
 	console.log('req.body', req.body)
   ref.createTodo(req.body, function(err, userData) {
     if(err) return res.status(400).send("err",err);

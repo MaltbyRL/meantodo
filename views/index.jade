@@ -11,13 +11,13 @@ block content
     button(style="background-color: brown; color: orange;" ) Submit
     
   
-  
+  <ui-view></ui-view>
   table
     thead
-      tr(ng-repeat)
-        td
+      tr(ng-repeat="header, value in list[0] track by $index")
+        td {{header}}
     tbody
-      tr
+      tr(ng-repeat="item in list track by $index")
        td {{task}}
        td {{dueby}}
        td {{completed}}
