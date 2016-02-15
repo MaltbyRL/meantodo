@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   console.log('req.body', req.body)
-  ref.createTodo(req.body, function(err, userData) {
+  Todo(req.body, function(err, userData) {
     if(err) return res.status(400).send("err",err);
     var task = req.body.task
     var dueby = req.body.dueby

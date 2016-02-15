@@ -15,7 +15,7 @@ app.controller('homeCtrl', function($scope, $http) {
     .then(function(data) {
       console.log("data:", data)
       $scope.todo = data.data
-      console.log("$scope.user:", $scope.user);
+      console.log("$scope.user:", $scope.todo);
 
 
 
