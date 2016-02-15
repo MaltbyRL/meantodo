@@ -2,41 +2,41 @@ extends layout
 
 block content
   h1= todoApp
-  p Welcome to The todoApp
+  h3 Welcome to The todoApp
   
     form
-  .form-group
-    label(for='task') Task
-    input#task.form-control(type='task', placeholder='task')
-  .form-group
-    label(for='date')
-    input#date.form-control(type='date', placeholder='Password')
-  button.btn.btn-default(ng-click='seendTodo()') Register
+      .form-group
+        label(for='task') Task
+        input#task.form-control(type='task', placeholder='task')
+      .form-group
+        label(for='date')
+        input#date.form-control(type='date')
+      button.btn.btn-default(style="background-color: brown; color: orange;" ng-click='sendTodo()') Send Task
 
         
       
     
-    //- <ui-view></ui-view>
-    table
-      thead.tableheaders
-        tr(ng-repeat="(header, value) in list[0] track by $index")
-          td 
-            {{header.task}}
-          td 
-            {{header.dueby}}
-          td 
-            {{header.completed}}
-      tbody.tabledatas
-        tr(ng-repeat="item in list track by $index")
-         td 
-           {{task}}
-         td 
-           {{dueby}}
-         td 
-           {{completed}}
-         td 
-           button(style="background-color: red; color: black;") del
-             
-       
+  //- <ui-view></ui-view>
+  table
+    thead.tableheaders
+      tr(ng-repeat="(header, value) in list[0] track by $index")
+        td 
+          {{header.task}}
+        td 
+          {{header.dueby}}
+        td 
+          {{header.completed}}
+    tbody.tabledatas
+      tr(ng-repeat="item in list track by $index")
+       td 
+         {{task}}
+       td 
+         {{dueby}}
+       td 
+         {{completed}}
+       td 
+         button(style="background-color: red; color: black;") del
+           
+   
        
        

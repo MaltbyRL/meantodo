@@ -8,18 +8,17 @@ app.controller('homeCtrl', function($scope, $http) {
     task: $scope.task,
     dueby: $scope.dueby
   }
-  function sendTodo(){
-    console.log($scope.this)
-    // console.log($scope.)
-    // console.log($scope.)
+  function sendTodo(newTask){
+    console.log("button clicked:", $scope.this)
+    $http.post("/", function(req, res) {
+      if (err) console.log(err)
+
+      console.log(".post res:", res);
+
+    });
+
 }
 
-  $http.post("/", function(req, res) {
-    if (err) console.log(err)
-
-    console.log(".post res:", res);
-
-  });
 
 
   $http.get("/")
