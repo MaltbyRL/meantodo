@@ -1,19 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+Todo = require('../models/todomodel')
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
-
-Todo = require('../models/todomodel')
-
-
-
 router.post('/', function(req, res, next) {
-	console.log('req.body', req.body)
+  console.log('req.body', req.body)
   ref.createTodo(req.body, function(err, userData) {
     if(err) return res.status(400).send("err",err);
     var task = req.body.task
@@ -21,9 +16,14 @@ router.post('/', function(req, res, next) {
     var completed = req.body.completed
     console.log("task", task)
     console.log("Routes/req", req.body);
- Todo.create({task: task, dueby: dueby, completed: completed}, function(err, newtodo) {
-   if(err) return res.status(400).send(err);
+    Todo.create({task: task, dueby: dueby, completed: completed}, function(err, newtodo) {
+      if(err) return res.status(400).send(err);
       res.send();
     });
   });
 });
+
+
+
+
+module.exports = router;

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('someApp');
+var app = angular.module('ricksApp');
 
 app.controller('homeCtrl', function($scope, $http) {
   console.log('homeCtrl');
@@ -11,13 +11,13 @@ app.controller('homeCtrl', function($scope, $http) {
   $http.post("users", function(req, res) {
     if(err) console.log(err)
 
-    console.log("res:", res);
+    console.log(".post res:", res);
 
   })
 
   $http.get("users", function(req, res) {
     if(err) console.log(req, res)
 
-    console.log(res)
+    console.log(".get res",res)
   })
 });
